@@ -1,0 +1,22 @@
+remote:
+  url:
+    cadvisor: http://172.17.36.201/metrics/cadvisor.txt
+    node: http://172.17.36.201/metrics/node.txt
+  metrics:
+    - cadvisor_cadvisor_version_info
+    - cadvisor_container_cpu_load_average_10s
+    - cadvisor_process_max_fds
+    - node_go_memstats_alloc_bytes_total
+  blacklist:
+    image: system/pause:3.1
+    container_label_io_kubernetes_container_name: ""
+
+local:
+  container:
+    enable: true
+    metrics:
+      - local_container_cpu_system_seconds_total
+      - local_container_memory_usage_bytes
+  node:
+    enable: true
+    metrics:

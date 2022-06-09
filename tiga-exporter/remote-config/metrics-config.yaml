@@ -1,0 +1,11 @@
+metrics:
+  cadvisor:
+    - container_memory_usage_bytes
+#    - container_fs_reads_bytes_total
+#    - container_network_receive_bytes_total
+#    - container_tasks_state
+  node:
+    - node_entropy_available_bits
+  pushGateway:
+    - container_data
+

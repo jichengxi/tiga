@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tiga-config
+  labels:
+    tiga-config: "true"
+  namespace: infra
+data:
+  metrics-config.yaml: |-
+    metrics:
+      cadvisor:
+        - container_memory_usage_bytes
+        - container_cpu_usage_seconds_total
+        - container_fs_reads_bytes_total
+        - container_fs_writes_bytes_total
+        - container_network_transmit_bytes_total
+        - container_network_receive_bytes_total
+        - container_memory_swap
+        - container_memory_rss
+        - container_memory_working_set_bytes
+        - container_memory_failcnt
+        - container_cpu_cfs_throttled_seconds_total
+        - container_cpu_cfs_throttled_periods_total
+      node:
+        - node_network_receive_errs_total
+        - node_network_transmit_errs_total
+        - node_network_receive_drop_total
+        - node_network_transmit_drop_total
+      pushGateway:
+        - container_data

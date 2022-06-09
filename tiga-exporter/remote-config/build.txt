@@ -1,0 +1,11 @@
+export CGO_ENABLED=0
+export GOOS=linux
+export GOARCH=amd64
+
+go build -o tiga-exporter tiga-exporter.go
+go run tiga-exporter.go -log_dir=./ -alsologtostderr
+scp tiga-exporter root@172.17.36.211:/tmp/
+
+
+
+
